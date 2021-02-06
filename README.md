@@ -1,6 +1,9 @@
 # Redesigning Dayahang Rai portfolio website.
 
-## Design 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3eb91f09-35ff-4720-9d84-584a03e38c28/deploy-status)](https://app.netlify.com/sites/relaxed-poincare-ec981c/deploys)
+
+## Design
+
 💻 `desktop mode`
 
 ![desktop](/readme-assets/desktop.png)
