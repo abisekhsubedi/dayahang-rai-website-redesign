@@ -1,15 +1,15 @@
-const fontFaceMagic = require("postcss-font-magician");
 module.exports = {
-
-    plugin: [
-        require("cssnano")({
-            preset: "default"
-        }),
-        require("autoprefixer"),
-        require("postcss-pxtorem"),
-        fontFaceMagic({
-            foundries: "google",
-            hosted: ["../src/assets/fonts/Modern-No-20.ttf"]
-        })
+    plugins: [
+        require("cssnano"),
+        // require("postcss-preset-env"),
+        // console.log("cssnano"),
+        require('autoprefixer'),
+        console.log("autoprefixer"),
+        // require("postcss-pxtorem"),
+        // console.log("postcss-pxterm"),
+        // require("postcss-font-magician")({
+            // foundries: "google"
+        // }),
+        // console.log("postcss-font-magician"),
     ]
 }
