@@ -1,3 +1,11 @@
+@font-face {
+        font-family: "Shadows Into Light";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Shadows Into Light"),local(ShadowsIntoLight),url(//fonts.gstatic.com/s/shadowsintolight/v10/UqyNK9UOIntux_czAvDQx_ZcHqZXBNQzdcD9.eot?#) format("eot"),url(//fonts.gstatic.com/s/shadowsintolight/v10/UqyNK9UOIntux_czAvDQx_ZcHqZXBNQzdcD5.woff2) format("woff2"),url(//fonts.gstatic.com/s/shadowsintolight/v10/UqyNK9UOIntux_czAvDQx_ZcHqZXBNQzdcD_.woff) format("woff");
+
+}
+
     *,
     *::before,
     *::after {
@@ -649,6 +657,7 @@
         color: #161616;
         color: var(--black);
         font-family: 'ink free', display;
+        font-family: 'Shadows Into Light', cursive;
         -webkit-text-stroke-width: 4px;
         -webkit-text-stroke-color: #161616;
         -webkit-text-stroke-color: var(--black);

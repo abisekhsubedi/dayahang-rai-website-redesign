@@ -7,19 +7,14 @@ module.exports = {
         console.log("autoprefixer"),
         require("postcss-font-magician")({
             foundries: "google",
-            custom: {
-                'modern': {
-                    variants: {
-                        normal: {
-                            url: {
-                                ttf: "./src/assets/fonts/modern.ttf"
-                            }
-                        }
-                    }
-                }
-            }
+
 
         }),
+        console.log(require("postcss-font-magician")({
+            foundries: "google",
+
+
+        }), )
 
     ]
 }
