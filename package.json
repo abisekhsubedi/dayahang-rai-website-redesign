@@ -14,6 +14,7 @@
     "postcss": "^8.2.4",
     "postcss-font-magician": "^3.0.0",
     "postcss-loader": "^5.0.0",
+    "postcss-preset-env": "^6.7.0",
     "postcss-pxtorem": "^5.1.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.21.1",
@@ -21,7 +22,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "webpack s -c ./webpack.config.js",
     "build": "webpack --color --mode production -c ./webpack.config.js",
     "spit": "webpack --mode development -c ./webpack.config.js"

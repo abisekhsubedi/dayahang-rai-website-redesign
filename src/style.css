@@ -98,14 +98,23 @@
         justify-content: center;
     }
 
+
+    /* 
+    =======================================
+    =       Real code begins from here    =
+    =======================================
+     */
+
     /* header */
+
     header {
         position: relative;
         overflow: hidden;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        height: 100vh;
+        min-height: 100vh;
+        /* min-height: fit-content; */
     }
 
     .navbar {
@@ -133,7 +142,7 @@
         align-items: center;
         /* outline: 5px solid plum; */
         cursor: pointer;
-        /* visibility: hidden; */
+        visibility: hidden;
         /* background: plum; */
         position: absolute;
         top: 2rem;
@@ -147,30 +156,6 @@
         background: white;
         height: 5px;
         width: 100%;
-        transition: all 0.3s ease;
-    }
-
-    /* when menu is clicked is-active is toggle with JS */
-
-    .navbar__toggle.is-active {
-        z-index: 6;
-
-    }
-
-    .is-active .bar:nth-child(2) {
-        display: none;
-
-    }
-
-    .is-active .bar:nth-child(1) {
-        transform: translateY(13px) rotate(45deg);
-        transition: all 0.3s ease;
-
-    }
-
-    .is-active .bar:nth-child(3) {
-
-        transform: translateY(-6px) rotate(-45deg);
         transition: all 0.3s ease;
     }
 
@@ -208,72 +193,7 @@
 
     }
 
-    /* when navbar menu is toggle and .active class is added to class list */
 
-    .navbar__menu.active {
-        background: var(--black);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 5;
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
-        font-size: 5rem;
-        line-height: 5.5rem;
-        font-weight: bold;
-        transition: all 0.3s ease;
-
-
-    }
-
-    .active .navbar__item {
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .active .navbar__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* when navbar menu is toggle and .active class is added to class list */
-
-    .active .navbar__link:hover {
-        text-decoration: none;
-        /* color: var(--blue); */
-
-    }
-
-    .active .navbar__item .navbar__link::before {
-        content: attr(data-text);
-        position: absolute;
-        top: 0%;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-
-        background: #000;
-        color: #e199709c;
-        font-size: 16rem;
-        line-height: 100vh;
-        transition: all 0.3s ease;
-        overflow: hidden;
-
-        opacity: 0;
-    }
-
-    .active .navbar__item:hover .navbar__link::before {
-        transition: all 0.2s ease;
-        opacity: 1;
-    }
 
 
     /* info section */
@@ -407,8 +327,7 @@
 
     /*
     who am i section
-
-*/
+    */
     .whoami {
         background: var(--blue);
     }
@@ -416,7 +335,8 @@
     .whoami__container {
         padding: var(--lxx) 0 0;
         /* background: green; */
-        height: 100vh;
+        min-height: 100vh;
+        /* min-height: fit-content; */
         display: flex;
         flex-direction: row-reverse;
         flex-wrap: wrap;
@@ -440,13 +360,9 @@
 
     .whoami__img {
         flex: 0 1 40%;
-        /* transform: translateY(25%); */
         height: 100%;
         margin: 0 auto;
-
         object-fit: contain;
-
-
     }
 
     /* popular films section */
@@ -651,9 +567,7 @@
     }
 
     /*  
-    
-    career section
-
+     career section
     */
     .career {
         background: var(--khaki);
@@ -673,7 +587,6 @@
 
         display: flex;
         flex-direction: row;
-        /* flex-wrap: wrap; */
         justify-content: space-between;
         max-height: 100%;
         text-align: center;
@@ -689,7 +602,6 @@
         font-family: 'ink free', display;
         -webkit-text-stroke-width: 4px;
         -webkit-text-stroke-color: var(--black);
-        /* background:white; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -724,7 +636,6 @@
         position: absolute;
         top: 20%;
         right: 0;
-        /* transform: rotate(20deg); */
         animation: wobble-2 3s infinite alternate-reverse;
 
     }
@@ -868,6 +779,7 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
+        overflow: hidden;
         /* outline: 45px solid salmon; */
     }
 
@@ -967,11 +879,8 @@
 
     } */
     .contact__box {
-        /* padding-left: 3.5rem; */
         font-size: 2rem;
         width: 100%;
-        /* background: var(--khaki); */
-
     }
 
     .contact__box a {
@@ -990,7 +899,6 @@
     .contact__bg {
         min-height: 300px;
         overflow: hidden;
-        /* outline: 4px solid green; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1072,21 +980,14 @@
     }
 
     /* 
-    ----------------------------------
-            responsive screen
-     --------------------------------
-    
-    
+    ++++++++++++++++++++++++++++++++++++
+    +        responsive screen design  +
+    ++++++++++++++++++++++++++++++++++++   
     */
 
-    /* desktop */
-    @media screen and (min-width:939px) and (max-width: 1536px) {
+    /* desktop screen */
 
-        header,
-        section,
-        footer {
-            /* outline: 45px solid salmon; */
-        }
+    @media screen and (min-width:939px) and (max-width: 1536px) {
 
         /* who am i section */
 
@@ -1112,12 +1013,12 @@
 
         .whoami__txt h1 {
             margin-top: 3rem;
-            /* font-size: clamp(6rem, 2vw, 8rem); */
-            /* line-height: 7rem; */
+            /* font-size: clamp(2rem, 5vw, 5rem); */
+            /* line-height: 5rem; */
         }
 
         .whoami__img {
-            flex: 0 2 40%;
+            flex: 0 1 40%;
             /* height: 100%; */
             /* margin: 0 auto; */
             /* object-fit: contain; */
@@ -1128,24 +1029,11 @@
 
         /* career section */
 
-        .career {
-            /* background: var(--khaki);
-            display: flex;
-            justify-content: center;
-            align-items: center; */
-        }
+        .career {}
 
         .career__container {
 
-            /* overflow: hidden;
-            padding: var(--lx) 0;
-            min-height: 800px;
-            max-height: 100%;
-    
-            background: var(--khaki);
-    
-            display: flex;
-            */
+
             min-height: 500px;
             height: 100%;
             flex-direction: column;
@@ -1158,15 +1046,11 @@
 
         .career__heading {
             flex: 0 1 250px;
-            /* height: 50; */
-            /* margin: var(--lx) 0; */
+
             font-size: 8rem;
             line-height: 8.5rem;
-            /* color: var(--black); */
-            /* font-family: 'ink free', display; */
-            /* -webkit-text-stroke-width: 4px; */
-            /* -webkit-text-stroke-color: var(--black);  */
-            /* background:white; */
+
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1263,26 +1147,17 @@
 
         .career__content {
             flex: 0 1 200px;
-            /* height: 100%; */
 
-            /* margin: var(--lx) 0; */
-            /* width: 100%; */
-            /* position: relative; */
-            /* display: flex; */
-            /* justify-content: center; */
 
 
 
         }
 
         .career__comp h2 {
-            /* color: var(--black); */
-            /* padding-right: var(--lx); */
+
             font-size: 3rem;
             line-height: 4rem;
-            /* font-family: 'ink free', display; */
-            /* -webkit-text-stroke-width: 1px; */
-            /* -webkit-text-stroke-color: black; */
+
 
         }
 
@@ -1323,11 +1198,157 @@
 
         }
 
+        /* contact section */
+        .contact__main {
+            padding-top: 5rem;
+            margin: 0 auto;
+            flex: 1 1 50%;
+            text-align: center;
+
+
+        }
+
     }
 
-    /* ipad & tablet */
+    /* Ipad & tablet */
 
     @media screen and (max-width:939px) {
+
+        /* navbar menu toggle icon */
+        .navbar__toggle {
+            visibility: visible;
+
+        }
+
+        /* navbar  hamburger menu code */
+        .navbar__menu {
+            opacity: 0;
+            transform: translateY(-1000px);
+
+        }
+
+        /* when menu is clicked is-active is toggle with JS */
+
+        .navbar__toggle.is-active {
+            z-index: 6;
+            transition: all 0s ease;
+
+        }
+
+        .is-active .bar:nth-child(2) {
+            display: none;
+
+        }
+
+        .is-active .bar:nth-child(1) {
+            transform: translateY(13px) rotate(45deg);
+            transition: all 0.3s ease;
+
+        }
+
+        .is-active .bar:nth-child(3) {
+
+            transform: translateY(-6px) rotate(-45deg);
+            transition: all 0.3s ease;
+        }
+
+        /* when navbar menu is toggle and .active class is added to class list */
+
+        .navbar__menu.active {
+            background: var(--black);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            font-size: clamp(2rem, 2vw, 5rem);
+            line-height: 5.5rem;
+            font-weight: bold;
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+
+
+        }
+
+        .active .navbar__item {
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .active .navbar__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* when navbar menu is toggle and .active class is added to class list */
+
+        .active .navbar__link:hover {
+            text-decoration: none;
+            /* color: var(--blue); */
+
+        }
+
+        .active .navbar__item .navbar__link::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            font-weight: bolder;
+
+            background: #000;
+            color: black;
+            -webkit-text-stroke-width: 5px;
+            -webkit-text-stroke-color: #e19970bd;
+            font-size: calc(100vh - 50%);
+            line-height: 100vh;
+            transition: all 0.3s linear;
+            overflow: hidden;
+
+            opacity: 0;
+        }
+
+        .active .navbar__item:hover .navbar__link::before {
+            transition: all 0.2s linear;
+            opacity: 1;
+        }
+
+        /* who am i section */
+
+        .whoami__txt {
+            /* text-align: center; */
+            flex: 2 0 60%;
+            /* padding: var(--l); */
+
+        }
+
+        .whoami__txt h1 {
+            margin-top: 3rem;
+            font-size: clamp(2rem, 5vw, 5rem);
+            line-height: 5rem;
+        }
+
+        .whoami__img {
+            flex: 0 1 40%;
+            /* height: 100%; */
+            /* margin: 0 auto; */
+            /* object-fit: contain; */
+
+
+        }
+
+        /* film section */
 
 
         .film {
@@ -1350,12 +1371,14 @@
         }
 
         /* other film section global settings */
-
-        .film__txt-content, .film-2__content .film__txt-content {
-            align-items: center;
+        .film__txt-content {
+            padding: var(--l) var(--lxx);
         }
 
-        /* film 1 section */
+        .film__txt-content,
+        .film-2__content .film__txt-content {
+            align-items: center;
+        }
 
         .film__one,
         .film__two,
@@ -1384,4 +1407,720 @@
         }
 
         /* career section */
+
+
+        .career__container {
+
+
+            min-height: 500px;
+            height: 100%;
+            flex-direction: column;
+            /* flex-wrap: wrap;  */
+            justify-content: center;
+            align-items: center;
+            max-height: 100%;
+            /* text-align: center; */
+        }
+
+        .career__heading {
+            flex: 0 1 250px;
+
+            font-size: 7rem;
+            line-height: 7.5rem;
+        }
+
+        .career__heading img {
+            width: 3rem;
+        }
+
+        .career__heading>img:nth-child(1),
+        .career__heading>img:nth-child(2) {
+            top: 15px;
+
+        }
+
+        .career__heading>img:nth-child(3),
+        .career__heading>img:nth-child(4) {
+
+            bottom: 15px;
+        }
+
+
+        .career__content {
+            /* position: relative; */
+            flex: 0 1 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .career__comp {
+            position: relative;
+            min-height: 100%;
+            width: 100%;
+            margin-top: var(--l);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform-origin: right;
+            --deg: 6deg;
+
+        }
+
+        .career__comp h2 {
+
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+
+        }
+
+        .career__comp {
+            flex-direction: column;
+
+        }
+
+        .career__comp h2 {
+            color: var(--black);
+            padding-right: var(--lx);
+            font-size: 3.5rem;
+            line-height: 4rem;
+            /* font-family: 'ink free', display; */
+            -webkit-text-stroke-width: 0px;
+            -webkit-text-stroke-color: black;
+
+
+        }
+
+
+        .career__one>.career__comp:nth-child(1) {
+
+            transform: rotate(0) translateX(0);
+            background: var(--black);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+
+        }
+
+        .career__one>.career__comp:nth-child(2) {
+
+            transform: rotate(0) translateX(0);
+            background: var(--dark-brown);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+
+        }
+
+        .career__two .career__comp {
+            flex-direction: column-reverse;
+        }
+
+        .career__two>.career__comp:nth-child(1) {
+            transform: rotate(0) translateX(0);
+            background: var(--dark-brown);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+
+        }
+
+        .career__two>.career__comp:nth-child(2) {
+            background: var(--black);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            transform: rotate(0) translateX(0);
+
+
+        }
+
+        /* contact section */
+
+        .contact__main {
+            padding: 6rem 3rem;
+            flex: 1 1 100%;
+            text-align: center;
+
+
+        }
+
+        .contact__box {
+            margin-top: var(--lxx);
+
+        }
+
+        .contact__box p {
+            text-underline-offset: 4px;
+            text-decoration-line: underline;
+            text-decoration-color: var(--khaki);
+            text-decoration-thickness: 5px;
+            text-decoration-skip-ink: none;
+        }
+
+        .contact__box p:hover {
+            text-underline-offset: 4px;
+        }
+
+        .contact__bg {
+            flex: 1 2 100%;
+
+        }
+
     }
+
+    /* mobile devices */
+
+    @media screen and (max-width: 768px) {
+
+        /* info section */
+
+
+        .info__text h1 {
+
+            width: 100%;
+            font-size: 3rem;
+            line-height: 3.5rem;
+
+
+        }
+
+        .info__text p {
+            margin-top: var(--m);
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+
+        }
+
+        /* who am i section */
+
+        .whoami__txt {
+
+            flex: 2 0 60%;
+
+
+        }
+
+        .whoami__txt h1 {
+            margin-top: 3rem;
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+
+        .whoami__img {
+            flex: 0 1 40%;
+            height: 100%;
+
+
+
+        }
+
+        /* popular film section */
+
+
+        .film__heading {
+            padding: 1.5rem 1rem;
+            font-size: 3.5rem;
+            line-height: 4rem;
+            height: 200px;
+
+        }
+
+
+        /* career section */
+
+
+        .career__heading {
+            flex: 0 1 250px;
+
+            font-size: 4rem;
+            line-height: 4.5rem;
+        }
+
+        /* contact section */
+
+        .contact__main {
+            padding-bottom: 0;
+        }
+
+        .career__comp h2 {
+            font-size: 2.5rem;
+            line-height: 3rem;
+
+
+        }
+
+        .contact__heading {
+            /* padding-left: var(--lx); */
+            margin-bottom: var(--lx);
+            font-size: 3.5rem;
+            line-height: 4rem;
+            width: 100%;
+
+            /* background: green; */
+        }
+
+        .contact__box {
+            /* padding-left: 3.5rem; */
+            font-size: 1.5rem;
+            line-height: 2rem;
+            width: 100%;
+            /* background: var(--khaki); */
+
+        }
+
+        .contact__box a {
+            padding: var(--m);
+        }
+
+    }
+
+    /* mobile screen Large */
+
+    @media screen and (max-width: 425px) {
+
+        .info__text h1 {
+
+            font-size: 3rem;
+            line-height: 3.5rem;
+
+
+        }
+
+        .info__text p {
+            margin-top: var(--m);
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+
+        }
+
+        .info__social-media-link a {
+
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        @keyframes wobble {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(10px);
+            }
+        }
+
+
+        /*
+        who am i section
+        */
+
+        .whoami {
+            background: var(--blue);
+        }
+
+        .whoami__container {
+            padding: var(--lxx) 0 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+        }
+
+        .whoami__txt {
+            flex: 1 0 60%;
+
+
+        }
+
+
+        .whoami__img {
+            flex: 0 1 40%;
+        }
+
+        /* popular films section */
+
+        .film {
+            background: var(--black);
+        }
+
+
+
+        /* other film section global settings */
+
+
+
+
+
+
+        .film__heading {
+            text-align: center;
+        }
+
+
+
+
+        .film__btn {
+            border: none;
+            margin: 2rem 0;
+            padding: 0.5rem 0.5rem;
+            width: 270px;
+            height: fit-content;
+            transition: all 0.4s ease;
+        }
+
+        .film__btn:hover {
+            transition: all 0s ease;
+            transform: translateY(-8px);
+        }
+
+        .film__btn:active {
+            background: rgb(255, 170, 12);
+            transition: all 0 ease;
+
+
+        }
+
+        .film__btn a {
+            font-size: 1.4rem;
+            color: var(--black);
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer__container {
+
+            min-height: 100%;
+            height: 100%;
+            padding: var(--l);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+
+
+        }
+
+        .footer__nav {
+            flex: 0 0 100%;
+        }
+
+
+        .footer__nav a {
+            text-decoration-line: underline;
+            text-decoration-color: var(--khaki);
+            text-decoration-thickness: 4px;
+            text-underline-offset: var(--s);
+        }
+
+        .footer__nav a:hover {
+            text-decoration: none;
+        }
+
+        .footer__go-up {
+            flex: 0 0 100%;
+        }
+
+        .footer__copyrightinfo {
+            flex: 0 0 100%;
+        }
+
+    }
+
+    /* Iphone 4 & 5 */
+    @media screen and (max-width: 375px) {
+        .film__container {
+            /* border: 4px solid green; */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .film__heading {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+            font-size: 2.5rem;
+            line-height: 3rem;
+
+        }
+
+
+        .film__one,
+        .film__two,
+        .film__three {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .film-1__link,
+        .film-2__link,
+        .film-3__link {
+            width: 100%;
+            max-height: 500px;
+            height: fit-content;
+        }
+
+        .film-1__content,
+        .film-2__content,
+        .film-3__content {
+            width: 100%;
+            padding: 0;
+        }
+
+        .film__txt-content {
+            padding: 0 var(--m);
+        }
+
+        .film__txt-content h2 {
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+
+        .film__txt-content p {
+            margin-top: var(--l);
+            font-size: 1.5rem;
+            line-height: 2.1rem;
+        }
+
+        .film__btn {
+            margin: 2rem 0;
+            padding: 0.5rem;
+        }
+
+        .film__btn a {
+            font-size: 1.2rem;
+            color: var(--black);
+            width: 100%;
+            height: 100%;
+        }
+
+        /* career section */
+        .career__container {
+            padding: 0 var(--m);
+            height: 100%;
+
+        }
+
+        .career__heading {
+
+            font-size: 3rem;
+            line-height: 3.5rem;
+            width: 70%;
+            margin: 0 var(--m);
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: var(--black);
+        }
+
+        .career__comp h2 {
+
+            font-size: 1.5rem;
+            line-height: 2rem;
+
+        }
+
+        .contact__container {
+
+            padding: 0 var(--l);
+            height: 600px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .contact__main {
+            flex: 0 1 50%;
+            width: 100%;
+            justify-content: center;
+            padding: 0;
+
+
+        }
+
+        .contact__bg {
+            flex: 0 1 50%;
+        }
+
+        .contact__bg img {
+            /* object-fit:scale-down; */
+            width: 80%;
+        }
+
+
+        .contact__heading {
+            margin-bottom: 0;
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+        }
+
+        .contact__box {
+
+            font-size: 1.2rem;
+            line-height: 1rem;
+            width: 100%;
+
+
+        }
+
+        .contact__box a {
+            padding: var(--m);
+        }
+
+
+
+        .footer__container {
+
+            min-height: 100%;
+            height: 100%;
+            flex-direction: column;
+            flex-wrap: no-wrap;
+
+        }
+
+        .footer__nav {
+            width: 100%;
+            flex: 0 1 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+
+
+
+        }
+
+
+    }
+
+    /* samsung mid range mobile */
+    @media screen and (max-width: 325px) {
+
+
+        .navbar__toggle {
+            /* position: relative; */
+            top: 3rem;
+            right: 3rem;
+
+            z-index: 99999;
+
+        }
+
+        .film__heading {
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+
+        .info__text h1 {
+
+            width: 100%;
+            font-size: 2rem;
+            line-height: 3rem;
+
+
+        }
+
+        .info__text p {
+            margin-top: var(--m);
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+
+
+        }
+
+        .whoami__txt h1 {
+            margin-top: 3rem;
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+
+
+        .film__txt-content h2 {
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+
+        .film__txt-content p {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        .film__btn {
+            /* background: none; */
+            border: none;
+            margin: 2rem 0;
+            padding: 0.5rem;
+            width: 250px;
+            height: fit-content;
+            /* transition: all 0s ease; */
+        }
+
+        .film__btn a {
+            font-size: 1rem;
+            color: var(--black);
+            /* color: white; */
+            width: 100%;
+            height: 100%;
+        }
+
+        .film__btn:hover {
+            transform: translate(0);
+            transition: all 0s ease;
+        }
+
+        .film__btn a span {
+            /* margin: 0; */
+        }
+
+        .contact__main {
+            padding-top: var(--lx);
+            flex: 0 1 100%;
+            width: 100%;
+            /* display: flex; */
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .contact__heading {
+            width: 100%;
+        }
+
+        .contact__box {
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+
+        }
+
+
+
+
+    }
+
+    /* galaxy fold */
+    @media screen and (max-width: 280px) {}

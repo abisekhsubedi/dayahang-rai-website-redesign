@@ -1,12 +1,10 @@
 module.exports = {
     plugins: [
-        require("cssnano"),
-        // require("postcss-preset-env"),
-        // console.log("cssnano"),
+        require("postcss-preset-env")({
+            stage: 0
+        }),
         require('autoprefixer'),
         console.log("autoprefixer"),
-        // require("postcss-pxtorem"),
-        // console.log("postcss-pxterm"),
         require("postcss-font-magician")({
             foundries: "google",
             custom: {
@@ -22,7 +20,6 @@ module.exports = {
             }
 
         }),
-        // console.log(foundries)
-        console.log("postcss-font-magician"),
+
     ]
 }
