@@ -7,9 +7,22 @@ module.exports = {
         console.log("autoprefixer"),
         // require("postcss-pxtorem"),
         // console.log("postcss-pxterm"),
-        // require("postcss-font-magician")({
-            // foundries: "google"
-        // }),
-        // console.log("postcss-font-magician"),
+        require("postcss-font-magician")({
+            foundries: "google",
+            custom: {
+                'modern': {
+                    variants: {
+                        normal: {
+                            url: {
+                                ttf: "./src/assets/fonts/modern.ttf"
+                            }
+                        }
+                    }
+                }
+            }
+
+        }),
+        // console.log(foundries)
+        console.log("postcss-font-magician"),
     ]
 }
