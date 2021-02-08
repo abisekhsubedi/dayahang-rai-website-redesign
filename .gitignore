@@ -1,5 +1,5 @@
 node_modules
-# src
+src
 webpack.config.js
 postcss.config.js
 package.lock.json
