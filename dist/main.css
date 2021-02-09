@@ -41,7 +41,7 @@
 
     html {
         scroll-behavior: smooth;
-        font-size: 16px;
+        font-size: 1rem;
 
     }
 
@@ -61,6 +61,7 @@
         color: white;
         text-decoration: none;
         display: block;
+        padding: 8px 16px;
         padding: var(--s) var(--m);
 
     }
@@ -186,9 +187,14 @@
     }
 
     .navbar__link:hover {
-        text-decoration-line: underline;
-        text-decoration-color: var(--khaki);
+        -webkit-text-decoration-line: underline;
+                text-decoration-line: underline;
+        -webkit-text-decoration-color: #E19A70;
+                text-decoration-color: #E19A70;
+        -webkit-text-decoration-color: var(--khaki);
+                text-decoration-color: var(--khaki);
         text-decoration-thickness: 4px;
+        text-underline-offset: 16px;
         text-underline-offset: var(--m);
 
     }
@@ -218,11 +224,13 @@
 
     .info__img {
         /* outline: 5px solid plum; */
+        margin-top: 40px;
         margin-top: var(--lxx);
         width: 250px;
         height: 250px;
         border-radius: 50%;
-        clip-path: ellipse(45% 45% at 50% 50%);
+        -webkit-clip-path: ellipse(45% 45% at 50% 50%);
+                clip-path: ellipse(45% 45% at 50% 50%);
         filter: drop-shadow(0 15px 24px rgba(0, 0, 0, 0.419))
     }
 
@@ -231,6 +239,7 @@
     }
 
     .info__text {
+        margin-top: 40px;
         margin-top: var(--lxx);
         width: 100%;
         text-align: center;
@@ -247,6 +256,7 @@
     }
 
     .info__text p {
+        margin-top: 16px;
         margin-top: var(--m);
         font-size: 3rem;
         line-height: 3.5rem;
@@ -255,6 +265,7 @@
     }
 
     .info__social-media-link {
+        margin-top: 40px;
         margin-top: var(--lxx);
         width: 100%;
         height: 100%;
@@ -274,6 +285,7 @@
     }
 
     .go-down-link {
+        margin-top: 40px;
         margin-top: var(--lxx);
         width: 100%;
         text-align: center;
@@ -285,6 +297,16 @@
         display: inline-block;
         width: 40px;
         animation: wobble 2s infinite alternate-reverse;
+    }
+
+    @-webkit-keyframes wobble {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(10px);
+        }
     }
 
     @keyframes wobble {
@@ -311,7 +333,8 @@
         width: 100%;
         height: 100%;
         /* display: block; */
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
 
     .overlay {
@@ -329,10 +352,12 @@
     who am i section
     */
     .whoami {
+        background: #005D76;
         background: var(--blue);
     }
 
     .whoami__container {
+        padding: 40px 0 0;
         padding: var(--lxx) 0 0;
         /* background: green; */
         min-height: 100vh;
@@ -349,6 +374,7 @@
     .whoami__txt {
         text-align: center;
         flex: 1 0 60%;
+        padding: 24px;
         padding: var(--l);
 
     }
@@ -362,11 +388,13 @@
         flex: 0 1 40%;
         height: 100%;
         margin: 0 auto;
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
     }
 
     /* popular films section */
     .film {
+        background: #161616;
         background: var(--black);
     }
 
@@ -378,6 +406,7 @@
         padding: 3rem 2rem;
         font-size: 5rem;
         height: 400px;
+        background: #E19A70;
         background: var(--khaki);
         display: flex;
         justify-content: center;
@@ -393,6 +422,7 @@
         justify-content: space-evenly;
         flex-direction: row;
         flex-wrap: wrap;
+        padding: 40px 0;
         padding: var(--lxx) 0;
     }
 
@@ -400,7 +430,8 @@
         width: 100%;
         height: 100%;
         transition: all 0.3s ease;
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
     }
 
     .film [class*="__link"] img:hover {
@@ -420,6 +451,7 @@
         flex-direction: column;
         justify-content: space-between;
         /* outline: 5px solid rgb(114, 116, 250); */
+        padding: 24px;
         padding: var(--l);
 
     }
@@ -430,6 +462,7 @@
     }
 
     .film__rating {
+        margin-top: 24px;
         margin-top: var(--l);
         display: flex;
         justify-content: flex-start;
@@ -443,6 +476,7 @@
     }
 
     .film__rating span:nth-child(2) {
+        padding-left: 16px;
         padding-left: var(--m);
         display: flex;
         justify-content: center;
@@ -450,6 +484,7 @@
     }
 
     .film__txt-content p {
+        margin-top: 24px;
         margin-top: var(--l);
         font-size: 1.5rem;
         line-height: 2rem;
@@ -466,6 +501,8 @@
         padding: 1rem 0.5rem;
         width: 270px;
         min-height: 50px;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         transition: all 0.4s ease;
     }
@@ -477,6 +514,7 @@
 
     .film__btn a {
         font-size: 1.4em;
+        color: #161616;
         color: var(--black);
         width: 100%;
         height: 100%;
@@ -508,6 +546,7 @@
     /* film 1 section */
 
     .film__one {
+        background: #BB4527;
         background: var(--light-brown);
         padding-bottom: 3rem;
     }
@@ -532,6 +571,7 @@
 
     /* film 2 section */
     .film__two {
+        background: #672728;
         background: var(--dark-brown);
         padding-bottom: 3rem;
         flex-direction: row-reverse;
@@ -563,11 +603,13 @@
     }
 
     .film-2__content .film__rating span:nth-child(2) {
+        padding-right: 16px;
         padding-right: var(--m);
     }
 
     /* film 3 section */
     .film__three {
+        background: #005D76;
         background: var(--blue);
         padding-bottom: 48px;
     }
@@ -588,6 +630,7 @@
      career section
     */
     .career {
+        background: #E19A70;
         background: var(--khaki);
         display: flex;
         justify-content: center;
@@ -597,9 +640,12 @@
     .career__container {
 
         overflow: hidden;
+        padding: 32px 0;
         padding: var(--lx) 0;
         min-height: 800px;
         max-height: 100%;
+
+        background: #E19A70;
 
         background: var(--khaki);
 
@@ -613,12 +659,16 @@
     .career__heading {
         flex: 0 2 10%;
 
+        margin: 32px 0;
+
         margin: var(--lx) 0;
         font-size: 10rem;
         line-height: 10.5rem;
+        color: #161616;
         color: var(--black);
         font-family: 'ink free', display;
         -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: #161616;
         -webkit-text-stroke-color: var(--black);
         display: flex;
         justify-content: center;
@@ -639,6 +689,17 @@
 
     }
 
+    @-webkit-keyframes wobble-1 {
+        from {
+            transform: rotate(0deg) translateY(0px);
+        }
+
+        to {
+            transform: rotate(-20deg) translateY(-20px);
+
+        }
+    }
+
     @keyframes wobble-1 {
         from {
             transform: rotate(0deg) translateY(0px);
@@ -656,6 +717,17 @@
         right: 0;
         animation: wobble-2 3s infinite alternate-reverse;
 
+    }
+
+    @-webkit-keyframes wobble-2 {
+        from {
+            transform: rotate(0deg) translateY(0px);
+        }
+
+        to {
+            transform: rotate(20deg) translateY(20px);
+
+        }
     }
 
     @keyframes wobble-2 {
@@ -678,6 +750,17 @@
 
     }
 
+    @-webkit-keyframes wobble-3 {
+        from {
+            transform: rotate(0deg) translateY(0px);
+        }
+
+        to {
+            transform: rotate(-20deg) translateY(-20px);
+
+        }
+    }
+
     @keyframes wobble-3 {
         from {
             transform: rotate(0deg) translateY(0px);
@@ -698,6 +781,17 @@
 
     }
 
+    @-webkit-keyframes wobble-4 {
+        from {
+            transform: rotate(0deg) translateY(0px);
+        }
+
+        to {
+            transform: rotate(20deg) translateY(20px);
+
+        }
+    }
+
     @keyframes wobble-4 {
         from {
             transform: rotate(0deg) translateY(0px);
@@ -712,6 +806,8 @@
     /* flex item : career__content */
     .career__content {
         flex: 1 1 45%;
+
+        margin: 32px 0;
 
         margin: var(--lx) 0;
         width: 100%;
@@ -729,6 +825,7 @@
         bottom: 0;
         min-height: 100%;
         width: 100%;
+        margin-top: 24px;
         margin-top: var(--l);
         display: flex;
         flex-direction: row;
@@ -740,7 +837,9 @@
     }
 
     .career__comp h2 {
+        color: #161616;
         color: var(--black);
+        padding-right: 32px;
         padding-right: var(--lx);
         font-size: 3.5rem;
         line-height: 4rem;
@@ -792,6 +891,7 @@
 */
 
     .contact {
+        background: #005D76;
         background: var(--blue);
         display: flex;
         flex-wrap: wrap;
@@ -804,7 +904,9 @@
     .contact__container {
         /* outline: 45px solid salmon; */
         max-height: 100%;
+        padding: 32px 32px 0 32px;
         padding: var(--lx) var(--lx) 0 var(--lx);
+        background: #005D76;
         background: var(--blue);
         min-height: 400px;
         display: flex;
@@ -836,6 +938,7 @@
 
     .contact__heading {
         /* padding-left: var(--lx); */
+        margin-bottom: 32px;
         margin-bottom: var(--lx);
         font-size: 5rem;
         line-height: 5.5rem;
@@ -906,11 +1009,17 @@
     }
 
     .contact__box p:hover {
-        text-decoration-line: underline;
-        text-decoration-color: var(--khaki);
+        -webkit-text-decoration-line: underline;
+                text-decoration-line: underline;
+        -webkit-text-decoration-color: #E19A70;
+                text-decoration-color: #E19A70;
+        -webkit-text-decoration-color: var(--khaki);
+                text-decoration-color: var(--khaki);
         text-decoration-thickness: 5px;
+        text-underline-offset: 16px;
         text-underline-offset: var(--m);
-        text-decoration-skip-ink: none;
+        -webkit-text-decoration-skip-ink: none;
+                text-decoration-skip-ink: none;
 
     }
 
@@ -930,6 +1039,7 @@
 
 
     footer {
+        background: #161616;
         background: var(--black);
         display: flex;
         justify-content: center;
@@ -941,6 +1051,7 @@
         overflow: hidden;
         min-height: 200px;
         height: 100px;
+        padding: 24px;
         padding: var(--l);
         /* outline: 15px solid green; */
 
@@ -976,9 +1087,14 @@
 
 
     .footer__nav a:hover {
-        text-decoration-line: underline;
-        text-decoration-color: var(--khaki);
+        -webkit-text-decoration-line: underline;
+                text-decoration-line: underline;
+        -webkit-text-decoration-color: #E19A70;
+                text-decoration-color: #E19A70;
+        -webkit-text-decoration-color: var(--khaki);
+                text-decoration-color: var(--khaki);
         text-decoration-thickness: 4px;
+        text-underline-offset: 16px;
         text-underline-offset: var(--m);
     }
 
@@ -991,6 +1107,7 @@
     }
 
     .footer__copyrightinfo {
+        padding: 24px 0;
         padding: var(--l) 0;
         flex: 2 0 50%;
         width: 100%;
@@ -1010,6 +1127,7 @@
         /* who am i section */
 
         .whoami__container {
+            padding: 40px 0 0;
             padding: var(--lxx) 0 0;
             /* background: green; */
             /* height: 100vh;
@@ -1092,6 +1210,17 @@
 
         }
 
+        @-webkit-keyframes wobble-1 {
+            from {
+                transform: rotate(0deg) translateY(0px);
+            }
+
+            to {
+                transform: rotate(-20deg) translateY(-20px);
+
+            }
+        }
+
         @keyframes wobble-1 {
             from {
                 transform: rotate(0deg) translateY(0px);
@@ -1110,6 +1239,17 @@
             /* transform: rotate(20deg); */
             animation: wobble-2 3s infinite alternate-reverse;
 
+        }
+
+        @-webkit-keyframes wobble-2 {
+            from {
+                transform: rotate(0deg) translateY(0px);
+            }
+
+            to {
+                transform: rotate(20deg) translateY(20px);
+
+            }
         }
 
         @keyframes wobble-2 {
@@ -1132,6 +1272,17 @@
 
         }
 
+        @-webkit-keyframes wobble-3 {
+            from {
+                transform: rotate(0deg) translateY(0px);
+            }
+
+            to {
+                transform: rotate(-20deg) translateY(-20px);
+
+            }
+        }
+
         @keyframes wobble-3 {
             from {
                 transform: rotate(0deg) translateY(0px);
@@ -1150,6 +1301,17 @@
             /* transform: rotate(0deg); */
             animation: wobble-4 3s infinite alternate-reverse;
 
+        }
+
+        @-webkit-keyframes wobble-4 {
+            from {
+                transform: rotate(0deg) translateY(0px);
+            }
+
+            to {
+                transform: rotate(20deg) translateY(20px);
+
+            }
         }
 
         @keyframes wobble-4 {
@@ -1273,6 +1435,7 @@
         /* when navbar menu is toggle and .active class is added to class list */
 
         .navbar__menu.active {
+            background: #161616;
             background: var(--black);
             position: absolute;
             top: 0;
@@ -1328,7 +1491,7 @@
             background: #000;
             color: black;
             -webkit-text-stroke-width: 5px;
-            -webkit-text-stroke-color: #e19970bd;
+            -webkit-text-stroke-color: rgba(225,153,112,0.74118);
             font-size: calc(100vh - 50%);
             line-height: 100vh;
             transition: all 0.3s linear;
@@ -1370,6 +1533,7 @@
 
 
         .film {
+            background: #161616;
             background: var(--black);
         }
 
@@ -1381,6 +1545,7 @@
             padding: 3rem 2rem;
             font-size: 5rem;
             height: 400px;
+            background: #E19A70;
             background: var(--khaki);
             display: flex;
             justify-content: center;
@@ -1390,6 +1555,7 @@
 
         /* other film section global settings */
         .film__txt-content {
+            padding: 24px 40px;
             padding: var(--l) var(--lxx);
         }
 
@@ -1479,6 +1645,7 @@
             position: relative;
             min-height: 100%;
             width: 100%;
+            margin-top: 24px;
             margin-top: var(--l);
             display: flex;
             flex-direction: column;
@@ -1503,7 +1670,9 @@
         }
 
         .career__comp h2 {
+            color: #161616;
             color: var(--black);
+            padding-right: 32px;
             padding-right: var(--lx);
             font-size: 3.5rem;
             line-height: 4rem;
@@ -1518,6 +1687,7 @@
         .career__one>.career__comp:nth-child(1) {
 
             transform: rotate(0) translateX(0);
+            background: #161616;
             background: var(--black);
             background-clip: text;
             -webkit-background-clip: text;
@@ -1530,6 +1700,7 @@
         .career__one>.career__comp:nth-child(2) {
 
             transform: rotate(0) translateX(0);
+            background: #672728;
             background: var(--dark-brown);
             background-clip: text;
             -webkit-background-clip: text;
@@ -1545,6 +1716,7 @@
 
         .career__two>.career__comp:nth-child(1) {
             transform: rotate(0) translateX(0);
+            background: #672728;
             background: var(--dark-brown);
             background-clip: text;
             -webkit-background-clip: text;
@@ -1555,6 +1727,7 @@
         }
 
         .career__two>.career__comp:nth-child(2) {
+            background: #161616;
             background: var(--black);
             background-clip: text;
             -webkit-background-clip: text;
@@ -1577,16 +1750,22 @@
         }
 
         .contact__box {
+            margin-top: 40px;
             margin-top: var(--lxx);
 
         }
 
         .contact__box p {
             text-underline-offset: 4px;
-            text-decoration-line: underline;
-            text-decoration-color: var(--khaki);
+            -webkit-text-decoration-line: underline;
+                    text-decoration-line: underline;
+            -webkit-text-decoration-color: #E19A70;
+                    text-decoration-color: #E19A70;
+            -webkit-text-decoration-color: var(--khaki);
+                    text-decoration-color: var(--khaki);
             text-decoration-thickness: 5px;
-            text-decoration-skip-ink: none;
+            -webkit-text-decoration-skip-ink: none;
+                    text-decoration-skip-ink: none;
         }
 
         .contact__box p:hover {
@@ -1617,6 +1796,7 @@
         }
 
         .info__text p {
+            margin-top: 16px;
             margin-top: var(--m);
             font-size: 2rem;
             line-height: 2.5rem;
@@ -1684,6 +1864,7 @@
 
         .contact__heading {
             /* padding-left: var(--lx); */
+            margin-bottom: 32px;
             margin-bottom: var(--lx);
             font-size: 3.5rem;
             line-height: 4rem;
@@ -1702,6 +1883,7 @@
         }
 
         .contact__box a {
+            padding: 16px;
             padding: var(--m);
         }
 
@@ -1720,6 +1902,7 @@
         }
 
         .info__text p {
+            margin-top: 16px;
             margin-top: var(--m);
             font-size: 2rem;
             line-height: 2.5rem;
@@ -1731,6 +1914,16 @@
 
             width: 3.5rem;
             height: 3.5rem;
+        }
+
+        @-webkit-keyframes wobble {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(10px);
+            }
         }
 
         @keyframes wobble {
@@ -1749,10 +1942,12 @@
         */
 
         .whoami {
+            background: #005D76;
             background: var(--blue);
         }
 
         .whoami__container {
+            padding: 40px 0 0;
             padding: var(--lxx) 0 0;
             height: 100vh;
             display: flex;
@@ -1778,6 +1973,7 @@
         /* popular films section */
 
         .film {
+            background: #161616;
             background: var(--black);
         }
 
@@ -1802,6 +1998,8 @@
             margin: 2rem 0;
             padding: 0.5rem 0.5rem;
             width: 270px;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
             height: fit-content;
             transition: all 0.4s ease;
         }
@@ -1820,6 +2018,7 @@
 
         .film__btn a {
             font-size: 1.4rem;
+            color: #161616;
             color: var(--black);
             width: 100%;
             height: 100%;
@@ -1829,6 +2028,7 @@
 
             min-height: 100%;
             height: 100%;
+            padding: 24px;
             padding: var(--l);
             display: flex;
             flex-direction: row;
@@ -1845,9 +2045,14 @@
 
 
         .footer__nav a {
-            text-decoration-line: underline;
-            text-decoration-color: var(--khaki);
+            -webkit-text-decoration-line: underline;
+                    text-decoration-line: underline;
+            -webkit-text-decoration-color: #E19A70;
+                    text-decoration-color: #E19A70;
+            -webkit-text-decoration-color: var(--khaki);
+                    text-decoration-color: var(--khaki);
             text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
             text-underline-offset: var(--s);
         }
 
@@ -1940,6 +2145,8 @@
         .film-3__link {
             width: 100%;
             max-height: 500px;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
             height: fit-content;
         }
 
@@ -1951,6 +2158,7 @@
         }
 
         .film__txt-content {
+            padding: 0 16px;
             padding: 0 var(--m);
         }
 
@@ -1960,6 +2168,7 @@
         }
 
         .film__txt-content p {
+            margin-top: 24px;
             margin-top: var(--l);
             font-size: 1rem;
             line-height: 1.5rem;
@@ -1972,6 +2181,7 @@
 
         .film__btn a {
             font-size: 1rem;
+            color: #161616;
             color: var(--black);
             width: 100%;
             height: 100%;
@@ -1984,6 +2194,7 @@
 
         /* career section */
         .career__container {
+            padding: 0 16px;
             padding: 0 var(--m);
             height: 100%;
 
@@ -1994,8 +2205,10 @@
             font-size: 3rem;
             line-height: 3.5rem;
             width: 70%;
+            margin: 0 16px;
             margin: 0 var(--m);
             -webkit-text-stroke-width: 0;
+            -webkit-text-stroke-color: #161616;
             -webkit-text-stroke-color: var(--black);
         }
 
@@ -2003,14 +2216,18 @@
 
             font-size: 1.5rem;
             line-height: 2rem;
+            color: #161616;
             color: var(--black);
             background: none;
+            -webkit-text-fill-color: #161616;
             -webkit-text-fill-color: var(--black);
             -webkit-text-stroke-width: 0;
 
         }
 
         .contact__container {
+
+            padding: 0 24px;
 
             padding: 0 var(--l);
             height: 600px;
@@ -2056,6 +2273,7 @@
         }
 
         .contact__box a {
+            padding: 16px;
             padding: var(--m);
         }
 
@@ -2114,6 +2332,7 @@
         }
 
         .info__text p {
+            margin-top: 16px;
             margin-top: var(--m);
             font-size: 1.5rem;
             line-height: 2.5rem;
@@ -2144,12 +2363,15 @@
             margin: 2rem 0;
             padding: 0.5rem;
             width: 250px;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
             height: fit-content;
             /* transition: all 0s ease; */
         }
 
         .film__btn a {
             font-size: 1rem;
+            color: #161616;
             color: var(--black);
             /* color: white; */
             width: 100%;
@@ -2166,6 +2388,7 @@
         }
 
         .contact__main {
+            padding-top: 32px;
             padding-top: var(--lx);
             flex: 0 1 100%;
             width: 100%;
@@ -2192,3 +2415,5 @@
 
     /* galaxy fold */
     @media screen and (max-width: 280px) {}
+
+/*# sourceMappingURL=main.css.map*/

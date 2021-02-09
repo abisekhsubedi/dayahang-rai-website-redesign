@@ -5,6 +5,8 @@ module.exports = {
         }),
         require('autoprefixer'),
         console.log("autoprefixer"),
+        require("postcss-pxtorem"),
+        console.log(require("postcss-pxtorem")),
         require("postcss-font-magician")({
             foundries: "google",
             custom: {
