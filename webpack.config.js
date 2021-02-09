@@ -9,7 +9,7 @@ module.exports = {
     entry: "./src/app.js",
     output: {
         filename: "main.js",
-        path: path.resolve(__dirname, "./"),
+        path: path.resolve(__dirname, "./dist"),
         // publicPath: 'pathOrUrlWhenProductionBuild'
     },
     module: {
@@ -22,7 +22,7 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: [
-                 //  only for build // MiniCssExtractPlugin.loader,
+                    //  only for build // MiniCssExtractPlugin.loader,
 
                     "style-loader",
                     {
@@ -36,6 +36,17 @@ module.exports = {
                         loader: "postcss-loader"
                     }
                 ]
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/,
@@ -55,7 +66,7 @@ module.exports = {
     ],
     devServer: {
         port: 8080,
-        contentBase: path.resolve(__dirname, "/dist"),
+        contentBase: ['./src', './dist'],
         hot: true,
         inline: true
     },

@@ -331,8 +331,8 @@ header {
 }
 
 .whoami__txt h1 {
-  font-size: clamp(6rem, 2vw, 8rem);
-  line-height: 7rem;
+  font-size: clamp(4rem, 2vw, 6rem);
+  line-height: 6rem;
 }
 
 .whoami__img {
